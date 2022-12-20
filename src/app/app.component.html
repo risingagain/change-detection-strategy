@@ -1,4 +1,7 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<input #inputItem type="text" placeholder="Enter a new item" />
+
+<button (click)="addItem(inputItem.value)">Add Item</button>
+
+<app-child [data]="items"></app-child>
+
+<router-outlet></router-outlet>

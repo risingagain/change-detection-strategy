@@ -1,10 +1,19 @@
-import { Component, VERSION } from '@angular/core';
+import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
-  selector: 'my-app',
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
+export class AppComponent {
+  title = 'change-detection-strategy';
+  items = ['shark', 'dolphin', 'octopus'];
+  // items = new BehaviorSubject(['shark', 'dolphin', 'octopus']);
+
+  addItem(item: any) {
+    this.items.push(item);
+    // For observable Data
+    // this.items.next(item);
+  }
 }
